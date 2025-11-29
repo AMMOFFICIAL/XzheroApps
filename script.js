@@ -1,10 +1,13 @@
 //===========[ API GITHUB ]=================//
 
-const API_LOGIN = 'https://raw.githubusercontent.com/AMMOFFICIAL/XzheroApps/refs/heads/main/github/db.json';
+const API_LOGIN = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/github/db.json';
+const TOKEN_LOGIN = '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';
 
-const API_BUGS   = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/sender.json'; 
+const API_BUGS   = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/github/sender.json'; 
+const TOKEN_BUGS = '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';
 
-const API_ACTIVITY = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/Activity.json'
+const API_ACTIVITY = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/github/activity.json';
+const TOKEN_ACTIVITY = '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'
 
 //====================================//
 
@@ -310,7 +313,7 @@ function showBugSuccess(msg) {
 }
 
     async function loadLogins(){
-  const {content, sha} = await githubGet(API_LOGIN);
+  const {content, sha} = await githubGet(API_LOGIN, TOKEN_LOGIN);
 
   if(Array.isArray(content)){
     state.loginList = content;
@@ -327,7 +330,7 @@ async function deleteAccount(username){
   try {
     state.loginList = state.loginList.filter(acc => acc.username !== username);
 
-    await githubPut(API_LOGIN, state.loginList, `delete user ${username}`, state.loginSha);
+    await githubPut(API_LOGIN, TOKEN_LOGIN, state.loginList, `delete user ${username}`, state.loginSha);
 
     await loadLogins();
     renderAccounts();
@@ -348,7 +351,7 @@ async function deleteAccount(username){
     if(Date.now() > expDate){
       
       state.loginList = state.loginList.filter(x=>x.username !== username);
-      await githubPut(API_LOGIN, state.loginList, `delete expired user ${username}`, state.loginSha);
+      await githubPut(API_LOGIN, TOKEN_LOGIN, state.loginList, `delete expired user ${username}`, state.loginSha);
       throw new Error("Akun sudah kedaluwarsa dan dihapus");
     }
   }
@@ -515,7 +518,7 @@ setView = function(id){
     expired: expDate || null
   });
 
-  await githubPut(API_LOGIN, state.loginList, `create user ${u}`, state.loginSha);
+  await githubPut(API_LOGIN, TOKEN_LOGIN, state.loginList, `create user ${u}`, state.loginSha);
   await loadLogins();
   renderAccounts();
 }
