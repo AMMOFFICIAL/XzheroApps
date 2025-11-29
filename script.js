@@ -2,13 +2,13 @@
 
 const API_LOGIN = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/GitHub/db.json
 ';
-const TOKEN_LOGIN = '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';
+const TOKEN_LOGIN = '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';
 
 const API_BUGS   = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/GitHub/sender.json'; 
-const TOKEN_BUGS = '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';
+const TOKEN_BUGS = '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';
 
 const API_ACTIVITY = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/GitHub/activity.json';
-const TOKEN_ACTIVITY = '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'
+const TOKEN_ACTIVITY = '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'
 
 //====================================//
 
