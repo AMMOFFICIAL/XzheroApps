@@ -1,7 +1,7 @@
 //===========[ API GITHUB ]=================//
 
 const API_LOGIN = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/github/db.json';
-const TOKEN_LOGIN = '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';
+const TOKEN_LOGIN = 'P';
 
 const API_BUGS   = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/github/sender.json'; 
 const TOKEN_BUGS = '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';
