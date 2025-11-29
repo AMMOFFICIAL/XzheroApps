@@ -4,7 +4,7 @@ const API_LOGIN = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/
 ';
 const TOKEN_LOGIN = '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';
 
-const API_BUGS   = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/sender.json'; 
+const API_BUGS   = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/GitHub/sender.json'; 
 const TOKEN_BUGS = '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';
 
 const API_ACTIVITY = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/Activity.json';
