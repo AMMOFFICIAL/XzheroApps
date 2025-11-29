@@ -1,7 +1,6 @@
 //===========[ API GITHUB ]=================//
 
 const API_LOGIN = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/db.json';
-const TOKEN_LOGIN = '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';
 
 const API_BUGS   = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/sender.json'; 
 const TOKEN_BUGS = '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';
@@ -330,7 +329,7 @@ async function deleteAccount(username){
   try {
     state.loginList = state.loginList.filter(acc => acc.username !== username);
 
-    await githubPut(API_LOGIN, TOKEN_LOGIN, state.loginList, `delete user ${username}`, state.loginSha);
+    await githubPut(API_LOGIN, state.loginList, `delete user ${username}`, state.loginSha);
 
     await loadLogins();
     renderAccounts();
@@ -351,7 +350,7 @@ async function deleteAccount(username){
     if(Date.now() > expDate){
       
       state.loginList = state.loginList.filter(x=>x.username !== username);
-      await githubPut(API_LOGIN, TOKEN_LOGIN, state.loginList, `delete expired user ${username}`, state.loginSha);
+      await githubPut(API_LOGIN, state.loginList, `delete expired user ${username}`, state.loginSha);
       throw new Error("Akun sudah kedaluwarsa dan dihapus");
     }
   }
@@ -518,7 +517,7 @@ setView = function(id){
     expired: expDate || null
   });
 
-  await githubPut(API_LOGIN, TOKEN_LOGIN, state.loginList, `create user ${u}`, state.loginSha);
+  await githubPut(API_LOGIN, state.loginList, `create user ${u}`, state.loginSha);
   await loadLogins();
   renderAccounts();
 }
