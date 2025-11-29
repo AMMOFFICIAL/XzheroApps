@@ -3,10 +3,8 @@
 const API_LOGIN = 'https://raw.githubusercontent.com/AMMOFFICIAL/XzheroApps/refs/heads/main/github/db.json';
 
 const API_BUGS   = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/sender.json'; 
-const TOKEN_BUGS = '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';
 
-const API_ACTIVITY = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/Activity.json';
-const TOKEN_ACTIVITY = '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'
+const API_ACTIVITY = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/Activity.json'
 
 //====================================//
 
