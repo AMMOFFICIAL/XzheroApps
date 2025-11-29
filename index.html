@@ -4,8 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Application Bug RAVAGE</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://raw.githack.com/AMMOFFICIAL/CSS-apk/refs/heads/main/all.min.css">
-   <link rel="stylesheet" href="https://raw.githack.com/AMMOFFICIAL/CSS-apk/main/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="https://raw.githack.com/DaffaDeveloper/apkstyle/main/style.css">
 </head>
 <body>
 <header class="nav">
@@ -374,7 +374,7 @@ APPLICATION RAVAGE ADALAH SEBUAH APLIKASI YANG BERTAMPILAN DESAIN UI YANG MENYED
     <h3 class="title" style="margin-bottom:10px;">Maaf Anda Bukan Status Admin</h3>
     <p class="subtitle" style="margin-bottom:22px;">Silahkan Beli Akun Status Admin</p>
     <div class="card" style="display:inline-flex; padding:8px 14px; border-radius:14px; margin-top:10px;">
-      <a href="https://t.me/AmmNotDev2" target="_blank" 
+      <a href="https://t.me/daffadevv" target="_blank" 
          style="display:inline-flex; align-items:center; gap:8px;
                 font-size:14px; font-weight:600;
                 color:white; text-decoration:none;">
@@ -383,85 +383,6 @@ APPLICATION RAVAGE ADALAH SEBUAH APLIKASI YANG BERTAMPILAN DESAIN UI YANG MENYED
     </div>
   </section>
 </main>
- <script>
-// =======================
-// LOGIN LOCAL (amm / 1)
-// =======================
-
-// Data akun login manual
-const LOCAL_USER = {
-  username: "amm",
-  password: "1",
-  role: "admin",
-  expired: "∞"
-};
-
-const formLogin = document.getElementById("formLogin");
-const loginMsg  = document.getElementById("loginMsg");
-const viewLogin = document.getElementById("view-login");
-const viewDashboard = document.getElementById("view-dashboard");
-const userBadge = document.getElementById("userBadge");
-const whoSpan = document.getElementById("who");
-const roleChip = document.getElementById("roleChip");
-
-formLogin.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const u = document.getElementById("username").value.trim();
-  const p = document.getElementById("password").value.trim();
-
-  if (u === LOCAL_USER.username && p === LOCAL_USER.password) {
-
-    // Simpan session
-    localStorage.setItem("sessionUser", JSON.stringify(LOCAL_USER));
-
-    loginMsg.innerHTML = "<span style='color:#4caf50'>Login berhasil!</span>";
-
-    setTimeout(() => {
-      showDashboard();
-    }, 800);
-
-  } else {
-    loginMsg.innerHTML = "<span style='color:#f44336'>Username / Password salah!</span>";
-  }
-});
-
-// ============================
-// TAMPILKAN DASHBOARD
-// ============================
-function showDashboard() {
-  const session = JSON.parse(localStorage.getItem("sessionUser") || "{}");
-
-  if (!session.username) return;
-
-  // Tampilkan user
-  whoSpan.textContent = session.username;
-  roleChip.textContent = session.role;
-
-  // Tampilkan badge
-  userBadge.classList.remove("hidden");
-
-  // Dashboard tampil
-  viewLogin.classList.add("hidden");
-  viewDashboard.classList.remove("hidden");
-  document.getElementById("btnHamburger").classList.remove("hidden");
-  document.getElementById("bottomNav").classList.remove("hidden");
-
-  // Admin Section
-  if (session.role === "admin") {
-    document.getElementById("adminSection").classList.remove("hidden");
-  }
-}
-
-// ============================
-// CEK SESSION SAAT RELOAD
-// ============================
-document.addEventListener("DOMContentLoaded", () => {
-  const session = JSON.parse(localStorage.getItem("sessionUser") || "{}");
-  if (session.username) showDashboard();
-});
-</script>
-
 <script src="script.js"></script>
   <nav id="bottomNav" class="bottom-nav hidden">
     <a href="#" data-view="dashboard"><i class="fa-solid fa-house"></i><span>Home</span></a>
@@ -484,17 +405,6 @@ document.addEventListener("DOMContentLoaded", () => {
   <div id="notifPopup" class="notif-popup hidden">
     <i class="fa-solid fa-circle-check"></i>
     <span id="notifText">Berhasil!</span>
-  </div>
+  </div>,
 </body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
+          </html>
