@@ -1,13 +1,13 @@
 //===========[ API GITHUB ]=================//
 
-const API_LOGIN = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/github/db.json';
-const TOKEN_LOGIN = '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';
+const API_LOGIN = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/db.json';
+const TOKEN_LOGIN = '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';
 
-const API_BUGS   = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/github/sender.json'; 
-const TOKEN_BUGS = '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';
+const API_BUGS   = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/sender.json'; 
+const TOKEN_BUGS = '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';
 
-const API_ACTIVITY = 'https://api.github.com/repos/AMMOFFICIAL/XzheroApps/contents/github/activity.json';
-const TOKEN_ACTIVITY = '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'
+const API_ACTIVITY = 'https://api.github.com/repos/fyzzOffcial23/XzheroApps/contents/Activity.json';
+const TOKEN_ACTIVITY = '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'
 
 //====================================//
 
@@ -313,7 +313,7 @@ function showBugSuccess(msg) {
 }
 
     async function loadLogins(){
-  const {content, sha} = await githubGet(API_LOGIN, TOKEN_LOGIN);
+  const {content, sha} = await githubGet(API_LOGIN);
 
   if(Array.isArray(content)){
     state.loginList = content;
